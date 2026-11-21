@@ -1,0 +1,1309 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑料大赛_影像社区_用真实故事点燃创作热情</title>
+<meta name="description" content="黑料大赛官方网站，是一个聚焦真实故事与影像创作的视频品牌社区，汇聚原创创作者，记录生活里的反转、真相与温度。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b1b23'/%3E%3Cpath d='M32 12l18 10v20L32 52 14 42V22z' fill='none' stroke='%23ff3d5a' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='7' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+:root{
+  --hl-bg:#101018;
+  --hl-bg2:#191926;
+  --hl-card:#1f1f2e;
+  --hl-line:#33334a;
+  --hl-text:#ececf4;
+  --hl-muted:#a3a3bd;
+  --hl-accent:#ff3d5a;
+  --hl-accent2:#ffd166;
+  --hl-cyan:#4ad6c8;
+  --hl-radius:16px;
+  --hl-shadow:0 18px 40px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+  background:var(--hl-bg);
+  color:var(--hl-text);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+ul{list-style:none}
+.hl-container{width:min(1200px,92%);margin:0 auto}
+.hl-section{padding:72px 0;scroll-margin-top:132px}
+.hl-section--alt{background:var(--hl-bg2)}
+.hl-eyebrow{
+  display:inline-block;font-size:.78rem;letter-spacing:.22em;
+  color:var(--hl-accent2);text-transform:uppercase;margin-bottom:12px;
+}
+.hl-h2{font-size:clamp(1.5rem,2.6vw,2.1rem);line-height:1.3;letter-spacing:.02em}
+.hl-h2 span{color:var(--hl-accent)}
+.hl-lead{color:var(--hl-muted);max-width:760px;margin-top:14px;font-size:.98rem}
+.hl-section-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:38px}
+.hl-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 22px;border-radius:999px;font-size:.92rem;font-weight:600;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+  border:1px solid var(--hl-line);
+}
+.hl-btn:hover{transform:translateY(-2px)}
+.hl-btn--primary{background:var(--hl-accent);color:#fff;border-color:transparent;box-shadow:0 8px 24px rgba(255,61,90,.32)}
+.hl-btn--primary:hover{box-shadow:0 12px 30px rgba(255,61,90,.45)}
+.hl-btn--ghost{background:transparent;color:var(--hl-text)}
+.hl-btn--ghost:hover{border-color:var(--hl-accent);color:var(--hl-accent)}
+.hl-tag{
+  display:inline-block;font-size:.72rem;padding:3px 10px;border-radius:999px;
+  border:1px solid var(--hl-line);color:var(--hl-muted);white-space:nowrap;
+}
+.hl-tag--hot{color:var(--hl-accent2);border-color:rgba(255,209,102,.4)}
+.hl-tag--cyan{color:var(--hl-cyan);border-color:rgba(74,214,200,.4)}
+
+/* 公告条 + 页头吸顶 */
+.hl-sticky-wrap{position:sticky;top:0;z-index:80}
+.hl-notice{
+  background:linear-gradient(90deg,#2a1020,#3d1526 55%,#2a1020);
+  border-bottom:1px solid rgba(255,61,90,.35);
+  font-size:.84rem;
+}
+.hl-notice-inner{display:flex;align-items:center;gap:12px;padding:9px 0;overflow:hidden}
+.hl-notice-badge{
+  flex:none;background:var(--hl-accent);color:#fff;font-size:.7rem;font-weight:700;
+  padding:2px 9px;border-radius:4px;letter-spacing:.08em;
+}
+.hl-notice-track{flex:1;overflow:hidden;white-space:nowrap}
+.hl-notice-track b{color:var(--hl-accent2);font-weight:600}
+.hl-notice-close{flex:none;color:var(--hl-muted);font-size:1rem;line-height:1}
+.hl-header{
+  background:rgba(16,16,24,.92);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--hl-line);
+}
+.hl-header-inner{display:flex;align-items:center;gap:22px;padding:14px 0}
+.hl-brand{display:flex;align-items:center;gap:10px;flex:none}
+.hl-brand-mark{
+  width:38px;height:38px;border-radius:10px;flex:none;
+  background:conic-gradient(from 140deg,#ff3d5a,#ffd166,#4ad6c8,#ff3d5a);
+  display:grid;place-items:center;font-weight:800;color:#101018;font-size:1.05rem;
+}
+.hl-brand-text b{display:block;font-size:1.06rem;letter-spacing:.06em;line-height:1.2}
+.hl-brand-text small{display:block;font-size:.66rem;color:var(--hl-muted);letter-spacing:.28em}
+.hl-nav{display:flex;gap:4px;margin-left:auto}
+.hl-nav a{
+  font-size:.9rem;padding:8px 13px;border-radius:8px;color:var(--hl-muted);
+  transition:color .2s,background .2s;
+}
+.hl-nav a:hover,.hl-nav a.is-active{color:var(--hl-text);background:rgba(255,255,255,.06)}
+.hl-search{
+  display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);
+  border:1px solid var(--hl-line);border-radius:999px;padding:7px 14px;min-width:200px;
+  transition:border-color .2s;
+}
+.hl-search:focus-within{border-color:var(--hl-accent)}
+.hl-search input{
+  background:none;border:none;outline:none;color:var(--hl-text);font-size:.86rem;width:100%;
+}
+.hl-search input::placeholder{color:#6c6c8a}
+.hl-burger{display:none;font-size:1.4rem;color:var(--hl-text);padding:4px 8px}
+.hl-search-feedback{
+  display:none;font-size:.78rem;color:var(--hl-accent2);
+  padding:6px 14px 10px;
+}
+.hl-search-feedback.is-on{display:block}
+
+/* 首屏 */
+.hl-hero{position:relative;overflow:hidden;padding:76px 0 84px}
+.hl-hero::before{
+  content:"";position:absolute;inset:-20% -10% auto auto;width:640px;height:640px;
+  background:radial-gradient(circle,rgba(255,61,90,.22),transparent 62%);
+  pointer-events:none;
+}
+.hl-hero::after{
+  content:"";position:absolute;inset:auto auto -30% -12%;width:540px;height:540px;
+  background:radial-gradient(circle,rgba(74,214,200,.14),transparent 64%);
+  pointer-events:none;
+}
+.hl-hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+.hl-hero h1{
+  font-size:clamp(2.4rem,5.2vw,4rem);line-height:1.08;letter-spacing:.01em;
+  margin:16px 0 22px;
+}
+.hl-hero h1 em{font-style:normal;color:var(--hl-accent);position:relative}
+.hl-hero h1 em::after{
+  content:"";position:absolute;left:0;right:0;bottom:6px;height:10px;
+  background:rgba(255,61,90,.22);z-index:-1;border-radius:4px;
+}
+.hl-hero-desc{color:var(--hl-muted);font-size:1rem;max-width:540px}
+.hl-hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.hl-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;max-width:540px}
+.hl-stat{
+  background:rgba(255,255,255,.04);border:1px solid var(--hl-line);
+  border-radius:12px;padding:14px 16px;
+}
+.hl-stat b{display:block;font-size:1.5rem;color:var(--hl-accent2);line-height:1.2}
+.hl-stat span{font-size:.78rem;color:var(--hl-muted)}
+.hl-hero-visual{position:relative}
+.hl-hero-cover{
+  border-radius:var(--hl-radius);overflow:hidden;box-shadow:var(--hl-shadow);
+  border:1px solid var(--hl-line);position:relative;aspect-ratio:16/10;
+}
+.hl-hero-cover img{width:100%;height:100%;object-fit:cover}
+.hl-hero-cover-badge{
+  position:absolute;left:14px;top:14px;display:flex;gap:8px;
+}
+.hl-hero-note{
+  position:absolute;right:-14px;bottom:-18px;width:210px;
+  background:var(--hl-card);border:1px solid var(--hl-line);border-radius:14px;
+  padding:14px 16px;box-shadow:var(--hl-shadow);
+}
+.hl-hero-note b{font-size:.92rem;display:block;margin-bottom:4px}
+.hl-hero-note span{font-size:.76rem;color:var(--hl-muted)}
+
+/* 关键词解析 */
+.hl-about-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:30px}
+.hl-about-card{
+  background:var(--hl-card);border:1px solid var(--hl-line);
+  border-radius:var(--hl-radius);padding:26px 28px;
+}
+.hl-about-card h3{font-size:1.1rem;margin-bottom:12px;color:var(--hl-accent2)}
+.hl-about-card p{font-size:.92rem;color:var(--hl-muted);margin-bottom:12px}
+.hl-about-card p:last-child{margin-bottom:0}
+.hl-about-card strong{color:var(--hl-text);font-weight:600}
+.hl-about-wide{grid-column:1/-1}
+.hl-pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+
+/* 焦点内容 */
+.hl-focus-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+.hl-focus-main{
+  position:relative;border-radius:var(--hl-radius);overflow:hidden;
+  border:1px solid var(--hl-line);min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;
+  box-shadow:var(--hl-shadow);
+}
+.hl-focus-main img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hl-focus-main::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(10,10,18,.94) 8%,rgba(10,10,18,.15) 62%,transparent);
+}
+.hl-focus-body{position:relative;z-index:2;padding:26px 28px}
+.hl-focus-body h3{font-size:1.35rem;margin:10px 0 8px}
+.hl-focus-body p{font-size:.88rem;color:#c9c9dd;max-width:520px}
+.hl-focus-side{display:grid;grid-template-rows:1fr 1fr;gap:22px}
+.hl-focus-mini{
+  display:grid;grid-template-columns:140px 1fr;gap:16px;align-items:center;
+  background:var(--hl-card);border:1px solid var(--hl-line);border-radius:var(--hl-radius);
+  overflow:hidden;transition:transform .2s,border-color .2s;
+}
+.hl-focus-mini:hover{transform:translateX(4px);border-color:var(--hl-accent)}
+.hl-focus-mini img{width:100%;height:100%;object-fit:cover;min-height:130px}
+.hl-focus-mini-body{padding:12px 16px 12px 0}
+.hl-focus-mini-body h3{font-size:1rem;line-height:1.4;margin-bottom:6px}
+.hl-focus-mini-body p{font-size:.8rem;color:var(--hl-muted);margin-bottom:8px}
+.hl-meta{font-size:.74rem;color:#7e7e9c;display:flex;gap:12px;flex-wrap:wrap}
+
+/* 视频流 */
+.hl-video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.hl-video-card{
+  background:var(--hl-card);border:1px solid var(--hl-line);border-radius:var(--hl-radius);
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .22s,border-color .22s,box-shadow .22s;
+}
+.hl-video-card:hover{transform:translateY(-5px);border-color:var(--hl-accent);box-shadow:var(--hl-shadow)}
+.hl-video-thumb{position:relative;aspect-ratio:16/9;overflow:hidden}
+.hl-video-thumb img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.hl-video-card:hover .hl-video-thumb img{transform:scale(1.06)}
+.hl-play{
+  position:absolute;right:10px;bottom:10px;width:34px;height:34px;border-radius:50%;
+  background:rgba(16,16,24,.72);display:grid;place-items:center;border:1px solid rgba(255,255,255,.25);
+}
+.hl-play::after{
+  content:"";border-style:solid;border-width:6px 0 6px 10px;
+  border-color:transparent transparent transparent #fff;margin-left:3px;
+}
+.hl-thumb-tag{position:absolute;left:10px;top:10px}
+.hl-video-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.hl-video-body h3{font-size:1rem;line-height:1.45}
+.hl-video-body p{font-size:.82rem;color:var(--hl-muted);flex:1}
+.hl-card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:2px}
+.hl-author{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--hl-muted)}
+.hl-avatar{
+  width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  font-size:.72rem;font-weight:700;color:#101018;flex:none;
+}
+.hl-actions{display:flex;gap:4px}
+.hl-icon-btn{
+  display:inline-flex;align-items:center;gap:4px;font-size:.76rem;color:var(--hl-muted);
+  padding:4px 7px;border-radius:8px;transition:color .2s,background .2s;
+}
+.hl-icon-btn:hover{background:rgba(255,255,255,.07);color:var(--hl-text)}
+.hl-icon-btn.is-liked{color:var(--hl-accent)}
+.hl-icon-btn.is-saved{color:var(--hl-accent2)}
+
+/* 专题 */
+.hl-topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.hl-topic{
+  position:relative;border-radius:var(--hl-radius);overflow:hidden;min-height:250px;
+  display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--hl-line);
+}
+.hl-topic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hl-topic::after{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to top,rgba(10,10,18,.92),rgba(10,10,18,.2) 70%,transparent);
+}
+.hl-topic-body{position:relative;z-index:2;padding:18px}
+.hl-topic-body h3{font-size:1rem;margin:8px 0 6px}
+.hl-topic-body p{font-size:.78rem;color:#c2c2d6}
+
+/* 创作者矩阵 / 时间线 */
+.hl-creator-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.hl-creator{
+  background:var(--hl-card);border:1px solid var(--hl-line);border-radius:var(--hl-radius);
+  padding:22px 20px;text-align:center;transition:transform .2s,border-color .2s;
+}
+.hl-creator:hover{transform:translateY(-4px);border-color:var(--hl-cyan)}
+.hl-creator-avatar{
+  width:64px;height:64px;border-radius:50%;margin:0 auto 14px;
+  display:grid;place-items:center;font-size:1.3rem;font-weight:800;color:#101018;
+}
+.hl-creator h3{font-size:1rem;margin-bottom:4px}
+.hl-creator .hl-field{font-size:.76rem;color:var(--hl-cyan);margin-bottom:8px}
+.hl-creator p{font-size:.8rem;color:var(--hl-muted);margin-bottom:12px}
+.hl-creator-stats{display:flex;justify-content:center;gap:16px;font-size:.74rem;color:#7e7e9c}
+.hl-creator-stats b{display:block;font-size:.95rem;color:var(--hl-text)}
+
+/* 故事随笔 */
+.hl-story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.hl-story{
+  background:linear-gradient(160deg,#1d1d2c,#171722);
+  border:1px solid var(--hl-line);border-radius:var(--hl-radius);padding:24px;
+  display:flex;flex-direction:column;gap:12px;
+}
+.hl-story .hl-quote{font-size:2rem;line-height:1;color:var(--hl-accent);font-family:Georgia,serif}
+.hl-story h3{font-size:1.05rem}
+.hl-story p{font-size:.86rem;color:var(--hl-muted)}
+.hl-story-author{font-size:.76rem;color:#7e7e9c;margin-top:auto}
+
+/* 排行榜 */
+.hl-rank-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.hl-rank-card{
+  background:var(--hl-card);border:1px solid var(--hl-line);border-radius:var(--hl-radius);padding:22px;
+}
+.hl-rank-card h3{font-size:1rem;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.hl-rank-card h3 span{
+  font-size:.68rem;background:rgba(255,61,90,.16);color:var(--hl-accent);
+  padding:2px 8px;border-radius:999px;
+}
+.hl-rank-list li{
+  display:flex;align-items:center;gap:12px;padding:9px 0;
+  border-bottom:1px dashed rgba(255,255,255,.07);font-size:.86rem;
+}
+.hl-rank-list li:last-child{border-bottom:none}
+.hl-rank-num{
+  width:22px;height:22px;border-radius:6px;flex:none;display:grid;place-items:center;
+  font-size:.72rem;font-weight:700;background:rgba(255,255,255,.07);color:var(--hl-muted);
+}
+.hl-rank-list li:nth-child(1) .hl-rank-num{background:var(--hl-accent);color:#fff}
+.hl-rank-list li:nth-child(2) .hl-rank-num{background:var(--hl-accent2);color:#101018}
+.hl-rank-list li:nth-child(3) .hl-rank-num{background:var(--hl-cyan);color:#101018}
+.hl-rank-list li span:last-child{margin-left:auto;font-size:.74rem;color:#7e7e9c}
+
+/* 评价 */
+.hl-review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.hl-review{
+  background:var(--hl-card);border:1px solid var(--hl-line);border-radius:var(--hl-radius);
+  padding:20px 22px;
+}
+.hl-review-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.hl-review p{font-size:.86rem;color:#c7c7db}
+.hl-review .hl-stars{font-size:.78rem;color:var(--hl-accent2);margin-bottom:8px}
+
+/* FAQ */
+.hl-faq{max-width:840px;margin:0 auto}
+.hl-faq details{
+  background:var(--hl-card);border:1px solid var(--hl-line);border-radius:12px;
+  margin-bottom:12px;overflow:hidden;
+}
+.hl-faq summary{
+  cursor:pointer;padding:16px 20px;font-size:.94rem;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;list-style:none;
+}
+.hl-faq summary::-webkit-details-marker{display:none}
+.hl-faq summary::after{content:"+";color:var(--hl-accent);font-size:1.2rem;line-height:1}
+.hl-faq details[open] summary::after{content:"−"}
+.hl-faq details p{padding:0 20px 18px;font-size:.86rem;color:var(--hl-muted)}
+
+/* 合作 & 动态 & 联系 */
+.hl-partner-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+.hl-partner{
+  padding:14px 22px;border:1px dashed var(--hl-line);border-radius:12px;
+  font-size:.88rem;color:var(--hl-muted);transition:border-color .2s,color .2s;
+}
+.hl-partner:hover{border-color:var(--hl-cyan);color:var(--hl-text)}
+.hl-update-list li{
+  display:flex;gap:18px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07);
+  font-size:.88rem;
+}
+.hl-update-list li:last-child{border-bottom:none}
+.hl-update-date{flex:none;width:96px;color:var(--hl-accent2);font-size:.8rem}
+.hl-contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:10px}
+.hl-contact-card{
+  background:var(--hl-card);border:1px solid var(--hl-line);border-radius:var(--hl-radius);padding:26px;
+}
+.hl-contact-card h3{font-size:1.05rem;margin-bottom:14px}
+.hl-contact-card p{font-size:.88rem;color:var(--hl-muted);margin-bottom:8px}
+.hl-contact-form{display:flex;flex-direction:column;gap:12px}
+.hl-contact-form input,.hl-contact-form textarea{
+  background:rgba(255,255,255,.05);border:1px solid var(--hl-line);border-radius:10px;
+  padding:11px 14px;color:var(--hl-text);font-size:.88rem;font-family:inherit;outline:none;
+  transition:border-color .2s;
+}
+.hl-contact-form input:focus,.hl-contact-form textarea:focus{border-color:var(--hl-accent)}
+.hl-contact-form textarea{min-height:96px;resize:vertical}
+
+/* 页脚 */
+.hl-footer{background:#0b0b12;border-top:1px solid var(--hl-line);padding:52px 0 30px}
+.hl-footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:36px}
+.hl-footer h4{font-size:.9rem;margin-bottom:14px;color:var(--hl-text)}
+.hl-footer li,.hl-footer p{font-size:.82rem;color:var(--hl-muted);margin-bottom:8px}
+.hl-footer-brand p{max-width:320px}
+.hl-footer-bottom{
+  border-top:1px solid rgba(255,255,255,.07);padding-top:20px;
+  display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
+  font-size:.76rem;color:#6c6c8a;
+}
+
+/* 弹窗 & Toast */
+.hl-modal{
+  position:fixed;inset:0;z-index:200;display:none;place-items:center;
+  background:rgba(5,5,10,.72);backdrop-filter:blur(6px);padding:20px;
+}
+.hl-modal.is-open{display:grid}
+.hl-modal-box{
+  width:min(480px,100%);background:var(--hl-card);border:1px solid var(--hl-line);
+  border-radius:var(--hl-radius);padding:28px;position:relative;box-shadow:var(--hl-shadow);
+}
+.hl-modal-box h3{font-size:1.1rem;margin-bottom:10px}
+.hl-modal-box p{font-size:.88rem;color:var(--hl-muted)}
+.hl-modal-close{position:absolute;right:14px;top:12px;font-size:1.2rem;color:var(--hl-muted)}
+.hl-share-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.hl-share-row button{
+  padding:8px 16px;border-radius:999px;border:1px solid var(--hl-line);font-size:.84rem;
+  transition:border-color .2s,color .2s;
+}
+.hl-share-row button:hover{border-color:var(--hl-accent);color:var(--hl-accent)}
+.hl-toast{
+  position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+  background:#fff;color:#101018;padding:11px 22px;border-radius:999px;
+  font-size:.86rem;font-weight:600;z-index:300;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;box-shadow:0 10px 28px rgba(0,0,0,.4);
+}
+.hl-toast.is-on{opacity:1;transform:translate(-50%,0)}
+.hl-totop{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--hl-accent);color:#fff;display:grid;place-items:center;
+  font-size:1.1rem;z-index:90;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;box-shadow:0 8px 22px rgba(255,61,90,.4);
+}
+.hl-totop.is-on{opacity:1;pointer-events:auto}
+.hl-totop:hover{transform:translateY(-3px)}
+
+/* 响应式 */
+@media(max-width:1024px){
+  .hl-hero-grid{grid-template-columns:1fr;gap:38px}
+  .hl-video-grid,.hl-topic-grid,.hl-creator-grid,.hl-story-grid,.hl-rank-grid,.hl-review-grid{grid-template-columns:repeat(2,1fr)}
+  .hl-footer-grid{grid-template-columns:1fr 1fr}
+  .hl-focus-grid,.hl-about-grid,.hl-contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .hl-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;
+    background:var(--hl-bg2);border-bottom:1px solid var(--hl-line);
+    flex-direction:column;padding:12px 6%;gap:2px;
+  }
+  .hl-nav.is-open{display:flex}
+  .hl-nav a{padding:11px 14px;font-size:.94rem}
+  .hl-burger{display:block;margin-left:auto}
+  .hl-search{display:none}
+  .hl-header-inner{flex-wrap:wrap;position:relative}
+  .hl-video-grid,.hl-topic-grid,.hl-creator-grid,.hl-story-grid,.hl-rank-grid,.hl-review-grid{grid-template-columns:1fr}
+  .hl-stats{grid-template-columns:1fr 1fr}
+  .hl-focus-mini{grid-template-columns:1fr}
+  .hl-focus-mini img{min-height:160px}
+  .hl-footer-grid{grid-template-columns:1fr}
+  .hl-section{padding:56px 0;scroll-margin-top:150px}
+  .hl-hero-note{position:static;width:100%;margin-top:16px}
+  .hl-notice-inner{flex-wrap:wrap;gap:8px}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 吸顶公告条 + 页头 -->
+<div class="hl-sticky-wrap">
+  <div class="hl-notice" id="hlNotice">
+    <div class="hl-container hl-notice-inner">
+      <span class="hl-notice-badge">官方发布</span>
+      <div class="hl-notice-track">
+        第二届黑料大赛「真相拼图」报名通道已开启 · 新增<b>城市反转</b>与<b>幕后纪实</b>双赛道 · 本期收录 186 部原创作品 · 创作者扶持计划第 3 期同步上线
+      </div>
+      <button class="hl-notice-close" aria-label="关闭公告" onclick="document.getElementById('hlNotice').style.display='none'">×</button>
+    </div>
+  </div>
+
+  <header class="hl-header">
+    <div class="hl-container hl-header-inner">
+      <a class="hl-brand" href="#hl-top">
+        <span class="hl-brand-mark">黑</span>
+        <span class="hl-brand-text">
+          <b>黑料大赛</b>
+          <small>HEILIAO · VIDEO</small>
+        </span>
+      </a>
+      <nav class="hl-nav" id="hlNav" aria-label="主导航">
+        <a href="#hl-top" class="is-active">首页</a>
+        <a href="#hl-focus">焦点内容</a>
+        <a href="#hl-videos">热门影像</a>
+        <a href="#hl-topics">专题企划</a>
+        <a href="#hl-creators">创作者</a>
+        <a href="#hl-rank">数据榜单</a>
+        <a href="#hl-about">品牌故事</a>
+        <a href="#hl-contact">联系投稿</a>
+      </nav>
+      <div class="hl-search">
+        <input type="search" id="hlSearchInput" placeholder="搜索影像 / 创作者 / 话题" aria-label="站内搜索">
+      </div>
+      <button class="hl-burger" id="hlBurger" aria-label="展开导航" aria-expanded="false">☰</button>
+    </div>
+    <div class="hl-container hl-search-feedback" id="hlSearchFeedback"></div>
+  </header>
+</div>
+
+<main id="hl-top">
+
+  <!-- 首屏 -->
+  <section class="hl-hero" aria-label="品牌首屏">
+    <div class="hl-container hl-hero-grid">
+      <div>
+        <span class="hl-eyebrow">HEILIAO VIDEO · 官方网站</span>
+        <h1>黑料大赛</h1>
+        <p class="hl-hero-desc">一个认真的影像赛事品牌，也是一个长期运营的原创视频社区。我们相信每段生活里都藏着值得被看见的反转与真相——黑料不是猎奇，而是让普通人的故事拥有被完整讲述的权利。</p>
+        <div class="hl-hero-actions">
+          <a href="#hl-videos" class="hl-btn hl-btn--primary">浏览本期作品 →</a>
+          <a href="#hl-contact" class="hl-btn hl-btn--ghost">报名参赛</a>
+        </div>
+        <div class="hl-stats">
+          <div class="hl-stat"><b>2,480+</b><span>累计原创影像</span></div>
+          <div class="hl-stat"><b>356 位</b><span>签约创作者</span></div>
+          <div class="hl-stat"><b>92.6 万</b><span>社区月度观看</span></div>
+        </div>
+      </div>
+      <div class="hl-hero-visual">
+        <div class="hl-hero-cover">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 500'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b1b2e'/%3E%3Cstop offset='1' stop-color='%23361a2c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='500' fill='url(%23g1)'/%3E%3Ccircle cx='640' cy='110' r='150' fill='%23ff3d5a' opacity='0.22'/%3E%3Ccircle cx='170' cy='400' r='120' fill='%234ad6c8' opacity='0.18'/%3E%3Cpath d='M0 360 Q200 280 400 350 T800 300 V500 H0Z' fill='%23ffd166' opacity='0.10'/%3E%3Crect x='300' y='150' width='220' height='140' rx='14' fill='%23101018' opacity='0.6' stroke='%23ff3d5a' stroke-width='3'/%3E%3Cpath d='M385 190 l60 30 -60 30 z' fill='%23ff3d5a'/%3E%3Ctext x='400' y='330' font-size='26' fill='%23ececf4' text-anchor='middle' font-family='sans-serif' font-weight='bold'%3E真 相 拼 图%3C/text%3E%3C/svg%3E" alt="黑料大赛真相拼图主视觉封面">
+          <div class="hl-hero-cover-badge">
+            <span class="hl-tag hl-tag--hot">赛事主视觉</span>
+            <span class="hl-tag">第二届</span>
+          </div>
+        </div>
+        <div class="hl-hero-note">
+          <b>本期命题：反转之后</b>
+          <span>报名截止 2026.12.20 · 评审团 12 位影像从业者</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 品牌故事 / 关键词解析 -->
+  <section class="hl-section hl-section--alt" id="hl-about">
+    <div class="hl-container">
+      <div class="hl-section-head">
+        <div>
+          <span class="hl-eyebrow">BRAND STORY · 品牌故事</span>
+          <h2 class="hl-h2">关于<span>黑料大赛</span>：一场把镜头对准真实生活的长期实验</h2>
+          <p class="hl-lead">我们不是围观者，也不想做猎奇的搬运工。黑料大赛从第一届的 64 部作品起步，如今已成为一个被创作者信赖的原创影像品牌与内容生态。</p>
+        </div>
+      </div>
+
+      <div class="hl-about-grid">
+        <div class="hl-about-card">
+          <h3>它是什么</h3>
+          <p><strong>黑料大赛</strong>是由黑料影像团队持续运营的年度原创视频赛事与社区品牌。所谓“黑料”，在我们的语境里指向那些被误传、被简化、被一句话概括掉的真实片段：一场说不清的家庭争执、一次失败的创业复盘、一段被剪辑过的邻里纠纷。我们鼓励创作者用完整的影像去还原它的来龙去脉。</p>
+          <p>官方网站承载作品展示、赛事报名、创作者档案与社区互动四大功能，所有内容均为原创首发，清晰呈现作者署名与创作说明。</p>
+        </div>
+        <div class="hl-about-card">
+          <h3>为什么做</h3>
+          <p>短视频时代，情绪比事实跑得更快。我们看到太多被断章取义的“爆料”，也看到当事人无处辩解。黑料大赛想做一件反方向的事：<strong>把讲述权交还给亲历者</strong>，用三到十五分钟的篇幅，把一件事讲完整。</p>
+          <p>品牌自创立起坚持“真实、克制、不煽动”的编辑准则，这也是我们能够积累口碑、成为用户首选影像社区的根本原因。</p>
+        </div>
+        <div class="hl-about-card hl-about-wide">
+          <h3>关键词定位与深度解析</h3>
+          <p>“黑料”两个字自带传播势能，也自带风险。作为企业级品牌，我们对这个关键词的理解分三层：<strong>第一层是叙事结构</strong>——它意味着故事里存在信息落差与反转，天然适合视频化表达；<strong>第二层是伦理边界</strong>——我们明确拒绝人肉、拒绝未核实的指控、拒绝把私人创伤当作流量燃料，所有涉及第三方的作品均需通过事实核查与授权确认；<strong>第三层是社区价值</strong>——一个健康的黑料大赛不该只有围观，还要有解释、有后续、有当事人的回应通道。</p>
+          <p>因此本站的内容生态由四类角色共同构成：<strong>创作者</strong>负责拍摄与陈述，<strong>核查志愿者</strong>负责交叉验证时间线与证据，<strong>编辑团队</strong>负责结构梳理与尺度把关，<strong>观众</strong>则通过评论、投票与纠错参与其中。四者形成的闭环，让“黑料”从一次性的爆料升级为可被反复检视的公共叙事样本。</p>
+          <p>在视觉与调性上，黑料大赛采用深色高级灰搭配荧光红与琥珀黄，既有调查报道的严肃感，也保留社区的温度。我们希望每位打开这个官方网站的人，第一感受不是“又有瓜可以吃”，而是“这里有人在认真讲故事”。这也是我们持续投入创作者扶持、坚持高清正版分发、维护社区秩序的原因——品质与口碑，是这个品牌唯一可长期依赖的资产。</p>
+          <p>截至目前，黑料大赛已举办两届主赛事、四期命题挑战、十余场线下放映与创作者对谈。平台累计上线原创作品超过两千四百部，覆盖城市探索、家庭关系、职场日常、行业观察、手作DIY、治愈影像等多元题材，形成了稳定而包容的内容生态。</p>
+          <div class="hl-pill-row">
+            <span class="hl-tag hl-tag--hot">原创首发</span>
+            <span class="hl-tag hl-tag--cyan">事实核查</span>
+            <span class="hl-tag">创作者扶持</span>
+            <span class="hl-tag">高清画质</span>
+            <span class="hl-tag">社区共治</span>
+            <span class="hl-tag">线下放映</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 焦点内容 -->
+  <section class="hl-section" id="hl-focus">
+    <div class="hl-container">
+      <div class="hl-section-head">
+        <div>
+          <span class="hl-eyebrow">FOCUS · 焦点内容</span>
+          <h2 class="hl-h2">本期<span>焦点影像</span>，来自评审团与社区的共同推荐</h2>
+          <p class="hl-lead">每期由编辑部初选、社区投票复选，最终产生焦点席位。它们共同的特点是：把一件小事讲透了。</p>
+        </div>
+        <a href="#hl-videos" class="hl-btn hl-btn--ghost">查看全部作品</a>
+      </div>
+
+      <div class="hl-focus-grid">
+        <article class="hl-focus-main">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 560'%3E%3Cdefs%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23242138'/%3E%3Cstop offset='1' stop-color='%23401a28'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='560' fill='url(%23g2)'/%3E%3Cg stroke='%23ff3d5a' stroke-width='2' opacity='0.5'%3E%3Cpath d='M100 460 L200 300 L320 400 L450 220 L600 340 L720 240'/%3E%3C/g%3E%3Ccircle cx='450' cy='220' r='9' fill='%23ffd166'/%3E%3Crect x='90' y='90' width='160' height='60' rx='8' fill='%23ff3d5a' opacity='0.85'/%3E%3Ctext x='170' y='128' font-size='22' fill='%23fff' text-anchor='middle' font-family='sans-serif' font-weight='bold'%3E焦点席位%3C/text%3E%3Ctext x='400' y='510' font-size='24' fill='%23c9c9dd' text-anchor='middle' font-family='sans-serif'%3E一 条 街 的 三 年 记 录%3C/text%3E%3C/svg%3E" alt="纪录片一条街的三年记录焦点封面">
+          <div class="hl-focus-body">
+            <span class="hl-tag hl-tag--hot">本期最高票</span>
+            <h3>一条街的三年记录：那家被传“跑路”的修表铺</h3>
+            <p>创作者用三年时间跟拍同一间铺面，从搬迁传闻、邻里误解到当事人自述，还原一个被社区舆论塑造又被平反的小人物故事。</p>
+            <div class="hl-meta" style="margin-top:10px">
+              <span>作者 · 巷口胶片</span><span>12:36</span><span>3.8 万次观看</span><span>2026.11.02 发布</span>
+            </div>
+          </div>
+        </article>
+
+        <div class="hl-focus-side">
+          <article class="hl-focus-mini">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%231a2a2c'/%3E%3Ccircle cx='240' cy='50' r='60' fill='%234ad6c8' opacity='0.25'/%3E%3Crect x='30' y='120' width='90' height='50' rx='6' fill='%234ad6c8' opacity='0.7'/%3E%3Crect x='135' y='80' width='60' height='90' rx='6' fill='%23ffd166' opacity='0.6'/%3E%3Ctext x='150' y='182' font-size='15' fill='%23ececf4' text-anchor='middle' font-family='sans-serif'%3E夜 班 档 案%3C/text%3E%3C/svg%3E" alt="系列短片夜班档案封面">
+            <div class="hl-focus-mini-body">
+              <h3>夜班档案：便利店凌晨三点的十二位客人</h3>
+              <p>城市探索 · 系列短片 06 集</p>
+              <div class="hl-meta"><span>2.1 万</span><span>08:14</span></div>
+            </div>
+          </article>
+          <article class="hl-focus-mini">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23261f2e'/%3E%3Cpath d='M0 160 L70 90 L140 130 L210 60 L300 110 V200 H0Z' fill='%23ff3d5a' opacity='0.35'/%3E%3Ccircle cx='70' cy='60' r='26' fill='%23ffd166' opacity='0.85'/%3E%3Ctext x='150' y='182' font-size='15' fill='%23ececf4' text-anchor='middle' font-family='sans-serif'%3E失 物 招 领%3C/text%3E%3C/svg%3E" alt="人物访谈失物招领短片封面">
+            <div class="hl-focus-mini-body">
+              <h3>失物招领：一封迟到十四年的道歉信</h3>
+              <p>人物访谈 · 单集</p>
+              <div class="hl-meta"><span>1.6 万</span><span>10:52</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 热门影像 -->
+  <section class="hl-section hl-section--alt" id="hl-videos">
+    <div class="hl-container">
+      <div class="hl-section-head">
+        <div>
+          <span class="hl-eyebrow">VIDEO STREAM · 热门影像</span>
+          <h2 class="hl-h2">社区正在看的<span>六部作品</span></h2>
+          <p class="hl-lead">点击心形可以收藏，点击分享可复制作品链接。你的每一次互动都会影响下期焦点席位。</p>
+        </div>
+        <a href="#hl-contact" class="hl-btn hl-btn--ghost">我要投稿</a>
+      </div>
+
+      <div class="hl-video-grid" id="hlVideoGrid">
+        <article class="hl-video-card">
+          <div class="hl-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%231c2233'/%3E%3Crect x='0' y='180' width='480' height='90' fill='%23242d45'/%3E%3Crect x='40' y='60' width='120' height='120' rx='8' fill='%23ff3d5a' opacity='0.55'/%3E%3Crect x='180' y='100' width='80' height='80' rx='8' fill='%23ffd166' opacity='0.6'/%3E%3Ccircle cx='380' cy='90' r='46' fill='%234ad6c8' opacity='0.45'/%3E%3Ctext x='240' y='248' font-size='17' fill='%23ececf4' text-anchor='middle' font-family='sans-serif'%3E楼 道 里 的 公 告 栏%3C/text%3E%3C/svg%3E" alt="楼道里的公告栏城市观察封面">
+            <span class="hl-thumb-tag hl-tag hl-tag--hot">城市探索</span>
+            <span class="hl-play" aria-hidden="true"></span>
+          </div>
+          <div class="hl-video-body">
+            <h3>楼道里的公告栏：一张通知单引发的整栋楼对话</h3>
+            <p>从一张错别字通知单开始，跟拍老小区三个月的公共议事，记录邻里之间如何把误会谈开。</p>
+            <div class="hl-card-foot">
+              <div class="hl-author"><span class="hl-avatar" style="background:%23ffd166">林</span>林间手册</div>
+              <div class="hl-actions">
+                <button class="hl-icon-btn hl-like" aria-label="收藏作品">♥ <span>128</span></button>
+                <button class="hl-icon-btn hl-share" aria-label="分享作品">↗</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hl-video-card">
+          <div class="hl-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%232a1c1c'/%3E%3Cpath d='M0 220 Q120 150 240 200 T480 170 V270 H0Z' fill='%23ff3d5a' opacity='0.3'/%3E%3Ccircle cx='120' cy='80' r='50' fill='%23ffd166' opacity='0.5'/%3E%3Cpath d='M220 140 l90 45 -90 45 z' fill='%23ec ecf4' opacity='0.9'/%3E%3Ctext x='240' y='248' font-size='17' fill='%23ececf4' text-anchor='middle' font-family='sans-serif'%3E厨 房 里 的 复 盘%3C/text%3E%3C/svg%3E" alt="厨房里的复盘美食创业封面">
+            <span class="hl-thumb-tag hl-tag">经验分享</span>
+            <span class="hl-play" aria-hidden="true"></span>
+          </div>
+          <div class="hl-video-body">
+            <h3>厨房里的复盘：一家小馆子倒闭前的九十天</h3>
+            <p>店主自己出镜讲述账本、房租与合伙人分歧，没有卖惨，只有一份坦白的经营复盘。</p>
+            <div class="hl-card-foot">
+              <div class="hl-author"><span class="hl-avatar" style="background:%234ad6c8">阿</span>阿南的后厨</div>
+              <div class="hl-actions">
+                <button class="hl-icon-btn hl-like" aria-label="收藏作品">♥ <span>964</span></button>
+                <button class="hl-icon-btn hl-share" aria-label="分享作品">↗</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hl-video-card">
+          <div class="hl-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23181f28'/%3E%3Cg fill='none' stroke='%234ad6c8' stroke-width='2' opacity='0.6'%3E%3Cpath d='M60 200 L140 120 L220 180 L300 90 L380 150 L440 110'/%3E%3C/g%3E%3Crect x='60' y='40' width='70' height='24' rx='12' fill='%23ff3d5a'/%3E%3Ctext x='95' y='57' font-size='13' fill='%23fff' text-anchor='middle' font-family='sans-serif'%3E核查%3C/text%3E%3Ctext x='240' y='248' font-size='17' fill='%23ececf4' text-anchor='middle' font-family='sans-serif'%3E谣 言 的 半 衰 期%3C/text%3E%3C/svg%3E" alt="谣言的半衰期事实核查封面">
+            <span class="hl-thumb-tag hl-tag hl-tag--cyan">事实核查</span>
+            <span class="hl-play" aria-hidden="true"></span>
+          </div>
+          <div class="hl-video-body">
+            <h3>谣言的半衰期：一条假消息在小区群里的七天</h3>
+            <p>创作者联合核查志愿者，逐日还原一条不实信息的传播路径，并采访了被误伤的当事人。</p>
+            <div class="hl-card-foot">
+              <div class="hl-author"><span class="hl-avatar" style="background:%23ff3d5a;color:%23fff">核</span>核查小组</div>
+              <div class="hl-actions">
+                <button class="hl-icon-btn hl-like" aria-label="收藏作品">♥ <span>1,247</span></button>
+                <button class="hl-icon-btn hl-share" aria-label="分享作品">↗</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hl-video-card">
+          <div class="hl-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%2324272b'/%3E%3Crect x='0' y='170' width='480' height='100' fill='%23303438'/%3E%3Crect x='70' y='80' width='100' height='90' rx='6' fill='%23ffd166' opacity='0.55'/%3E%3Crect x='200' y='110' width='60' height='60' rx='6' fill='%234ad6c8' opacity='0.6'/%3E%3Cpath d='M300 140 l70 35 -70 35 z' fill='%23ff3d5a' opacity='0.85'/%3E%3Ctext x='240' y='248' font-size='17' fill='%23ececf4' text-anchor='middle' font-family='sans-serif'%3E旧 物 修 复 间%3C/text%3E%3C/svg%3E" alt="旧物修复间手作DIY封面">
+            <span class="hl-thumb-tag hl-tag">手作DIY</span>
+            <span class="hl-play" aria-hidden="true"></span>
+          </div>
+          <div class="hl-video-body">
+            <h3>旧物修复间：他把邻居扔掉的椅子做成了一面墙</h3>
+            <p>一件旧家具的修复过程，也是一个人与搬离老宅的记忆和解的过程，镜头安静，节奏舒服。</p>
+            <div class="hl-card-foot">
+              <div class="hl-author"><span class="hl-avatar" style="background:%23c8b6ff">木</span>木屑与光</div>
+              <div class="hl-actions">
+                <button class="hl-icon-btn hl-like" aria-label="收藏作品">♥ <span>612</span></button>
+                <button class="hl-icon-btn hl-share" aria-label="分享作品">↗</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hl-video-card">
+          <div class="hl-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23211a2a'/%3E%3Ccircle cx='240' cy='135' r='90' fill='none' stroke='%23ff3d5a' stroke-width='3' opacity='0.7'/%3E%3Ccircle cx='240' cy='135' r='50' fill='%23ffd166' opacity='0.4'/%3E%3Cpath d='M220 110 l50 25 -50 25 z' fill='%23ececf4'/%3E%3Ctext x='240' y='248' font-size='17' fill='%23ececf4' text-anchor='middle' font-family='sans-serif'%3E幕 后 剪 辑 室%3C/text%3E%3C/svg%3E" alt="幕后剪辑室创作幕后封面">
+            <span class="hl-thumb-tag hl-tag">创作幕后</span>
+            <span class="hl-play" aria-hidden="true"></span>
+          </div>
+          <div class="hl-video-body">
+            <h3>幕后剪辑室：一段三分钟视频为什么要拍四个月</h3>
+            <p>公开从选题会到终剪的完整流程，包括被删掉的十二个版本，以及删掉它们的原因。</p>
+            <div class="hl-card-foot">
+              <div class="hl-author"><span class="hl-avatar" style="background:%23ffd166">剪</span>剪辑台日记</div>
+              <div class="hl-actions">
+                <button class="hl-icon-btn hl-like" aria-label="收藏作品">♥ <span>438</span></button>
+                <button class="hl-icon-btn hl-share" aria-label="分享作品">↗</button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="hl-video-card">
+          <div class="hl-video-thumb">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23151e1c'/%3E%3Cpath d='M0 200 Q80 140 160 180 T320 160 T480 190 V270 H0Z' fill='%234ad6c8' opacity='0.25'/%3E%3Ccircle cx='380' cy='70' r='40' fill='%23ffd166' opacity='0.55'/%3E%3Cpath d='M120 120 c20 -30 60 -30 80 0 c-20 30 -60 30 -80 0 z' fill='%23ff3d5a' opacity='0.7'/%3E%3Ctext x='240' y='248' font-size='17' fill='%23ececf4' text-anchor='middle' font-family='sans-serif'%3E陪 伴 的 形 状%3C/text%3E%3C/svg%3E" alt="陪伴的形状治愈影像封面">
+            <span class="hl-thumb-tag hl-tag">治愈影像</span>
+            <span class="hl-play" aria-hidden="true"></span>
+          </div>
+          <div class="hl-video-body">
+            <h3>陪伴的形状：社区食堂里那对每天来的老夫妻</h3>
+            <p>没有冲突，没有反转，只是记录两位老人一年里的每日到访。温柔的片子同样值得被推荐。</p>
+            <div class="hl-card-foot">
+              <div class="hl-author"><span class="hl-avatar" style="background:%23a8e6cf">慢</span>慢镜头食堂</div>
+              <div class="hl-actions">
+                <button class="hl-icon-btn hl-like" aria-label="收藏作品">♥ <span>1,033</span></button>
+                <button class="hl-icon-btn hl-share" aria-label="分享作品">↗</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 专题企划 -->
+  <section class="hl-section" id="hl-topics">
+    <div class="hl-container">
+      <div class="hl-section-head">
+        <div>
+          <span class="hl-eyebrow">PROGRAMS · 专题企划</span>
+          <h2 class="hl-h2">四个<span>长期企划</span>，把同一类故事讲到更深</h2>
+          <p class="hl-lead">专题企划由编辑部发起，面向全体创作者开放投稿，每个企划都有明确的命题边界与审稿标准。</p>
+        </div>
+      </div>
+
+      <div class="hl-topic-grid">
+        <article class="hl-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23231d33'/%3E%3Ccircle cx='120' cy='110' r='80' fill='%23ff3d5a' opacity='0.35'/%3E%3Ccircle cx='300' cy='260' r='110' fill='%234ad6c8' opacity='0.22'/%3E%3Crect x='140' y='180' width='120' height='80' rx='8' fill='%23ffd166' opacity='0.6'/%3E%3C/svg%3E" alt="专题真相拼图企划封面">
+          <div class="hl-topic-body">
+            <span class="hl-tag hl-tag--hot">进行中</span>
+            <h3>真相拼图</h3>
+            <p>以多视角还原同一件事，投稿需提供至少两位当事人的授权。已收录 42 部。</p>
+          </div>
+        </article>
+        <article class="hl-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%231d2a26'/%3E%3Cpath d='M0 320 L100 220 L200 280 L300 170 L400 240 V400 H0Z' fill='%234ad6c8' opacity='0.38'/%3E%3Ccircle cx='300' cy='90' r='50' fill='%23ffd166' opacity='0.6'/%3E%3C/svg%3E" alt="专题城市反转企划封面">
+          <div class="hl-topic-body">
+            <span class="hl-tag hl-tag--cyan">新上线</span>
+            <h3>城市反转</h3>
+            <p>讲一座城市里被误读的街区与人物。新增赛道，首期截稿 2026.12.10。</p>
+          </div>
+        </article>
+        <article class="hl-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%232a2320'/%3E%3Crect x='60' y='240' width='90' height='100' fill='%23ffd166' opacity='0.55'/%3E%3Crect x='170' y='180' width='70' height='160' fill='%23ff3d5a' opacity='0.45'/%3E%3Crect x='260' y='120' width='80' height='220' fill='%23ececf4' opacity='0.18'/%3E%3C/svg%3E" alt="专题幕后纪实企划封面">
+          <div class="hl-topic-body">
+            <span class="hl-tag">长期开放</span>
+            <h3>幕后纪实</h3>
+            <p>聚焦创作过程本身：失败的试拍、被推翻的分镜、团队分歧如何解决。</p>
+          </div>
+        </article>
+        <article class="hl-topic">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' fill='%23201c2b'/%3E%3Ccircle cx='200' cy='200' r='130' fill='none' stroke='%23ff3d5a' stroke-width='6' opacity='0.5'/%3E%3Ccircle cx='200' cy='200' r='70' fill='%23ffd166' opacity='0.4'/%3E%3Cpath d='M180 170 l60 30 -60 30 z' fill='%23ececf4'/%3E%3C/svg%3E" alt="专题一镜到底挑战企划封面">
+          <div class="hl-topic-body">
+            <span class="hl-tag">征集中</span>
+            <h3>一镜到底挑战</h3>
+            <p>技术向命题：不剪辑、不拼接，用单个长镜头讲完一个完整的小故事。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 创作者矩阵 -->
+  <section class="hl-section hl-section--alt" id="hl-creators">
+    <div class="hl-container">
+      <div class="hl-section-head">
+        <div>
+          <span class="hl-eyebrow">CREATORS · 创作者矩阵</span>
+          <h2 class="hl-h2">这个社区里，<span>值得关注的创作者</span></h2>
+          <p class="hl-lead">他们来自不同城市、不同职业，共同点是对事实的耐心与对镜头的诚实。点击姓名可查看创作者档案。</p>
+        </div>
+      </div>
+
+      <div class="hl-creator-grid">
+        <article class="hl-creator">
+          <div class="hl-creator-avatar" style="background:linear-gradient(140deg,#ff3d5a,#ffd166)">巷</div>
+          <h3>巷口胶片</h3>
+          <div class="hl-field">城市探索 · 纪实跟拍</div>
+          <p>擅长用长时间跟拍还原街区里的人情纠葛，作品节奏沉稳，受访者出镜率高。</p>
+          <div class="hl-creator-stats">
+            <span><b>38</b>作品</span>
+            <span><b>4.2万</b>关注</span>
+          </div>
+        </article>
+        <article class="hl-creator">
+          <div class="hl-creator-avatar" style="background:linear-gradient(140deg,#4ad6c8,#a8e6cf)">阿</div>
+          <h3>阿南的后厨</h3>
+          <div class="hl-field">行业观察 · 餐饮经营</div>
+          <p>前餐厅主理人，转型做影像记录。最擅长把账本和分歧讲得清楚又不失温度。</p>
+          <div class="hl-creator-stats">
+            <span><b>24</b>作品</span>
+            <span><b>2.8万</b>关注</span>
+          </div>
+        </article>
+        <article class="hl-creator">
+          <div class="hl-creator-avatar" style="background:linear-gradient(140deg,#c8b6ff,#8f7cff)">木</div>
+          <h3>木屑与光</h3>
+          <div class="hl-field">手作DIY · 治愈影像</div>
+          <p>修复旧物，也修复记忆。作品以静物特写和自然声见长，被社区称为“电子木工房”。</p>
+          <div class="hl-creator-stats">
+            <span><b>51</b>作品</span>
+            <span><b>6.1万</b>关注</span>
+          </div>
+        </article>
+        <article class="hl-creator">
+          <div class="hl-creator-avatar" style="background:linear-gradient(140deg,#ffd166,#ff9f43)">核</div>
+          <h3>核查小组</h3>
+          <div class="hl-field">事实核查 · 深度内容</div>
+          <p>由六名志愿者组成的协作团队，负责时间线梳理与信源交叉验证，作品标注严谨。</p>
+          <div class="hl-creator-stats">
+            <span><b>17</b>作品</span>
+            <span><b>3.4万</b>关注</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 故事随笔 + 榜单 -->
+  <section class="hl-section" id="hl-rank">
+    <div class="hl-container">
+      <div class="hl-section-head">
+        <div>
+          <span class="hl-eyebrow">STORIES & CHART · 随笔与榜单</span>
+          <h2 class="hl-h2">镜头之外的<span>手记</span>，与本周的热度曲线</h2>
+          <p class="hl-lead">创作者常常在拍摄之后写下没放进片子里的部分，我们把它们保留在这里。</p>
+        </div>
+      </div>
+
+      <div class="hl-story-grid" style="margin-bottom:46px">
+        <article class="hl-story">
+          <div class="hl-quote">“</div>
+          <h3>我拍下了自己被告知“别传出去”的那部分</h3>
+          <p>剪辑时我反复删掉又恢复同一段素材。最后留下的版本里，当事人自己说完了整件事，这比我替她解释更有力量。</p>
+          <div class="hl-story-author">— 巷口胶片，写于 2026.11.06</div>
+        </article>
+        <article class="hl-story">
+          <div class="hl-quote">“</div>
+          <h3>账本比情绪更难剪</h3>
+          <p>观众想听的是“为什么倒闭”，可真正的原因都在枯燥的流水里。我试着让一张张单据代替旁白，效果反而更好。</p>
+          <div class="hl-story-author">— 阿南的后厨，写于 2026.10.29</div>
+        </article>
+        <article class="hl-story">
+          <div class="hl-quote">“</div>
+          <h3>被删掉的十二个版本</h3>
+          <p>每一次重剪都是把抒情往回收一点。留下的是最不炫技的那一版，但它是唯一让我自己看得下去的一版。</p>
+          <div class="hl-story-author">— 剪辑台日记，写于 2026.11.11</div>
+        </article>
+      </div>
+
+      <div class="hl-rank-grid">
+        <div class="hl-rank-card">
+          <h3>本周热度榜 <span>每周一更新</span></h3>
+          <ul class="hl-rank-list">
+            <li><span class="hl-rank-num">1</span><span>谣言的半衰期</span><span>12.4万</span></li>
+            <li><span class="hl-rank-num">2</span><span>厨房里的复盘</span><span>9.8万</span></li>
+            <li><span class="hl-rank-num">3</span><span>一条街的三年记录</span><span>8.6万</span></li>
+            <li><span class="hl-rank-num">4</span><span>陪伴的形状</span><span>6.2万</span></li>
+            <li><span class="hl-rank-num">5</span><span>楼道里的公告栏</span><span>5.5万</span></li>
+          </ul>
+        </div>
+        <div class="hl-rank-card">
+          <h3>新人榜 <span>入驻 90 天内</span></h3>
+          <ul class="hl-rank-list">
+            <li><span class="hl-rank-num">1</span><span>晚风收音机</span><span>3.2万</span></li>
+            <li><span class="hl-rank-num">2</span><span>搬运工小周</span><span>2.9万</span></li>
+            <li><span class="hl-rank-num">3</span><span>菜市场观察员</span><span>2.4万</span></li>
+            <li><span class="hl-rank-num">4</span><span>十七号放映厅</span><span>2.1万</span></li>
+            <li><span class="hl-rank-num">5</span><span>修补时间的人</span><span>1.8万</span></li>
+          </ul>
+        </div>
+        <div class="hl-rank-card">
+          <h3>口碑榜 <span>社区评分</span></h3>
+          <ul class="hl-rank-list">
+            <li><span class="hl-rank-num">1</span><span>失物招领</span><span>9.6 分</span></li>
+            <li><span class="hl-rank-num">2</span><span>旧物修复间</span><span>9.5 分</span></li>
+            <li><span class="hl-rank-num">3</span><span>夜班档案</span><span>9.3 分</span></li>
+            <li><span class="hl-rank-num">4</span><span>幕后剪辑室</span><span>9.1 分</span></li>
+            <li><span class="hl-rank-num">5</span><span>城市反转·首期</span><span>8.9 分</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 用户评价 -->
+  <section class="hl-section hl-section--alt" id="hl-reviews">
+    <div class="hl-container">
+      <div class="hl-section-head">
+        <div>
+          <span class="hl-eyebrow">COMMUNITY · 用户评价</span>
+          <h2 class="hl-h2">来自观众和创作者的<span>真实反馈</span></h2>
+          <p class="hl-lead">评价均来自社区账号，保留原话，包括批评的部分。</p>
+        </div>
+      </div>
+
+      <div class="hl-review-grid">
+        <article class="hl-review">
+          <div class="hl-review-head">
+            <span class="hl-avatar" style="background:#ffd166">周</span>
+            <div><b>周末不加班</b><br><small class="hl-meta">普通观众</small></div>
+          </div>
+          <div class="hl-stars">★★★★★</div>
+          <p>第一次在一个视频平台看到作品页写着“已核实授权”。虽然只是小字，但让人放心很多。</p>
+        </article>
+        <article class="hl-review">
+          <div class="hl-review-head">
+            <span class="hl-avatar" style="background:#4ad6c8">李</span>
+            <div><b>李工的硬盘</b><br><small class="hl-meta">投稿创作者</small></div>
+          </div>
+          <div class="hl-stars">★★★★★</div>
+          <p>审稿意见写得很具体，甚至帮我指出了时间线上的一处矛盾。这种反馈比通过与否更珍贵。</p>
+        </article>
+        <article class="hl-review">
+          <div class="hl-review-head">
+            <span class="hl-avatar" style="background:#ff3d5a;color:#fff">橙</span>
+            <div><b>橙子汽水</b><br><small class="hl-meta">社区志愿者</small></div>
+          </div>
+          <div class="hl-stars">★★★★☆</div>
+          <p>核查流程很严谨，但对新人来说门槛偏高。希望后续能出更细的投稿攻略。</p>
+        </article>
+        <article class="hl-review">
+          <div class="hl-review-head">
+            <span class="hl-avatar" style="background:#c8b6ff">老</span>
+            <div><b>老城区住户</b><br><small class="hl-meta">被拍摄者</small></div>
+          </div>
+          <div class="hl-stars">★★★★★</div>
+          <p>片子拍完给我看过两遍，确认没有问题才发。这种尊重是我愿意继续和他们聊的原因。</p>
+        </article>
+        <article class="hl-review">
+          <div class="hl-review-head">
+            <span class="hl-avatar" style="background:#a8e6cf">剪</span>
+            <div><b>剪到凌晨三点</b><br><small class="hl-meta">投稿创作者</small></div>
+          </div>
+          <div class="hl-stars">★★★★☆</div>
+          <p>专题企划的命题边界写得很清楚，省去了大量猜测。就是希望上线节奏能再稳定一些。</p>
+        </article>
+        <article class="hl-review">
+          <div class="hl-review-head">
+            <span class="hl-avatar" style="background:#ff9f43">阿</span>
+            <div><b>阿雅的城市日记</b><br><small class="hl-meta">普通观众</small></div>
+          </div>
+          <div class="hl-stars">★★★★★</div>
+          <p>看到《陪伴的形状》时哭了。原来不用制造冲突也能把人留住，这才是好内容。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ + 合作 + 动态 + 联系 -->
+  <section class="hl-section" id="hl-contact">
+    <div class="hl-container">
+      <div class="hl-section-head">
+        <div>
+          <span class="hl-eyebrow">SUPPORT · 帮助与联络</span>
+          <h2 class="hl-h2">参赛、合作与<span>常见问题</span></h2>
+          <p class="hl-lead">如果下面的内容没有解决你的疑问，欢迎通过页面底部的联系方式与我们沟通。</p>
+        </div>
+      </div>
+
+      <div class="hl-faq" style="margin-bottom:52px">
+        <details open>
+          <summary>怎么报名参加黑料大赛？</summary>
+          <p>在首页点击“报名参赛”进入投稿页，填写创作者信息、作品简介与素材授权说明。单人可提交多部作品，但同一主题序列视为一部。</p>
+        </details>
+        <details>
+          <summary>作品时长和题材有什么要求？</summary>
+          <p>主赛事作品建议 3 至 15 分钟，专题企划可适当放宽。题材不限，但必须围绕真实事件或真实人物，且涉及第三方的内容需提供出镜与传播授权。</p>
+        </details>
+        <details>
+          <summary>什么是“事实核查”？会审查到什么程度？</summary>
+          <p>核查小组会就时间线、公开信源与当事人陈述做交叉验证。我们不判断谁对谁错，只核对片中陈述是否有可追溯的依据。</p>
+        </details>
+        <details>
+          <summary>作品版权归谁？平台会二次商用吗？</summary>
+          <p>版权归创作者所有。官方网站在获得授权后用于展示、放映与专题推荐，不会进行未约定的商业二创。</p>
+        </details>
+        <details>
+          <summary>没有专业设备可以投稿吗？</summary>
+          <p>可以。历届入围作品里有相当一部分使用手机拍摄。我们更看重叙事完整度与真实性，画质只是评分维度之一。</p>
+        </details>
+        <details>
+          <summary>如何申请品牌合作或线下放映？</summary>
+          <p>请通过下方“商务合作”邮箱提交需求，注明合作形式、时间与预算范围。编辑部通常在三个工作日内回复。</p>
+        </details>
+      </div>
+
+      <div style="margin-bottom:52px">
+        <h3 class="hl-h2" style="font-size:1.15rem;margin-bottom:6px">合作品牌与伙伴</h3>
+        <p class="hl-lead" style="margin-bottom:0">感谢这些伙伴在设备、场地与放映环节提供的支持。</p>
+        <div class="hl-partner-row">
+          <div class="hl-partner">光谷影像器材</div>
+          <div class="hl-partner">城南独立放映厅</div>
+          <div class="hl-partner">市立图书馆影像资料室</div>
+          <div class="hl-partner">青石社区文化中心</div>
+          <div class="hl-partner">回声唱片与声效</div>
+          <div class="hl-partner">本地创作者联盟</div>
+        </div>
+      </div>
+
+      <div style="margin-bottom:52px">
+        <h3 class="hl-h2" style="font-size:1.15rem;margin-bottom:16px">企业动态与官方发布</h3>
+        <ul class="hl-update-list">
+          <li><span class="hl-update-date">2026.11.18</span><span>第二届黑料大赛新增“城市反转”“幕后纪实”双赛道，报名通道正式开放。</span></li>
+          <li><span class="hl-update-date">2026.11.09</span><span>创作者扶持计划第三期结果公布，共 24 位创作者获得拍摄资金与器材支持。</span></li>
+          <li><span class="hl-update-date">2026.10.27</span><span>官方网站作品页新增“核查说明”字段，可查看每部作品的核实状态与授权范围。</span></li>
+          <li><span class="hl-update-date">2026.10.12</span><span>“一镜到底挑战”专题征稿启动，截稿日期 2027.01.15。</span></li>
+          <li><span class="hl-update-date">2026.09.30</span><span>首届大赛精选作品线下放映在城南独立放映厅完成四场，累计到场观众 610 人次。</span></li>
+        </ul>
+      </div>
+
+      <div class="hl-contact-grid">
+        <div class="hl-contact-card">
+          <h3>联系我们</h3>
+          <p>投稿与作品咨询：creator@heiliao-film.example</p>
+          <p>商务与品牌合作：brand@heiliao-film.example</p>
+          <p>事实核查与纠错：check@heiliao-film.example</p>
+          <p>办公地址：城南创意园 3 号楼 2 层 影像工作室</p>
+          <p>工作时间：周一至周五 10:00—19:00</p>
+        </div>
+        <div class="hl-contact-card">
+          <h3>快速留言</h3>
+          <form class="hl-contact-form" id="hlContactForm">
+            <input type="text" name="name" placeholder="你的称呼" required>
+            <input type="email" name="email" placeholder="联系邮箱" required>
+            <textarea name="msg" placeholder="想咨询的内容，例如投稿、合作或纠错反馈" required></textarea>
+            <button type="submit" class="hl-btn hl-btn--primary" style="justify-content:center">提交留言</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="hl-footer">
+  <div class="hl-container">
+    <div class="hl-footer-grid">
+      <div class="hl-footer-brand">
+        <div class="hl-brand" style="margin-bottom:12px">
+          <span class="hl-brand-mark">黑</span>
+          <span class="hl-brand-text"><b>黑料大赛</b><small>HEILIAO · VIDEO</small></span>
+        </div>
+        <p>黑料大赛官方网站，由黑料影像团队持续运营。我们以原创影像记录真实故事，坚持事实核查与创作者扶持，致力于构建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#hl-focus">焦点内容</a></li>
+          <li><a href="#hl-videos">热门影像</a></li>
+          <li><a href="#hl-topics">专题企划</a></li>
+          <li><a href="#hl-creators">创作者矩阵</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于品牌</h4>
+        <ul>
+          <li><a href="#hl-about">品牌故事</a></li>
+          <li><a href="#hl-rank">数据榜单</a></li>
+          <li><a href="#hl-reviews">用户评价</a></li>
+          <li><a href="#hl-contact">常见问题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>参与方式</h4>
+        <ul>
+          <li><a href="#hl-contact">报名参赛</a></li>
+          <li><a href="#hl-contact">商务合作</a></li>
+          <li><a href="#hl-contact">纠错反馈</a></li>
+          <li><a href="#hl-contact">线下放映</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="hl-footer-bottom">
+      <span>© 2026 黑料大赛 官方网站 · 版权所有 · 内容持续运营中</span>
+      <span>原创内容受版权保护，转载须获授权 · 影像备案号 2026-HL-0119</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 弹窗 -->
+<div class="hl-modal" id="hlShareModal" role="dialog" aria-modal="true" aria-label="分享作品">
+  <div class="hl-modal-box">
+    <button class="hl-modal-close" aria-label="关闭" data-hl-close>×</button>
+    <h3>分享这部作品</h3>
+    <p>选择渠道，或直接复制链接发给朋友。分享内容仅包含作品页地址。</p>
+    <div class="hl-share-row">
+      <button data-hl-copy>复制链接</button>
+      <button data-hl-share-tip="微信">微信</button>
+      <button data-hl-share-tip="微博">微博</button>
+      <button data-hl-share-tip="QQ">QQ</button>
+    </div>
+  </div>
+</div>
+
+<div class="hl-modal" id="hlCreatorModal" role="dialog" aria-modal="true" aria-label="创作者信息">
+  <div class="hl-modal-box">
+    <button class="hl-modal-close" aria-label="关闭" data-hl-close>×</button>
+    <h3 id="hlCreatorName">创作者档案</h3>
+    <p id="hlCreatorDesc"></p>
+  </div>
+</div>
+
+<div class="hl-toast" id="hlToast" role="status" aria-live="polite"></div>
+<button class="hl-totop" id="hlToTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+  var toastEl=document.getElementById('hlToast');
+  var toastTimer=null;
+  function toast(msg){
+    toastEl.textContent=msg;
+    toastEl.classList.add('is-on');
+    clearTimeout(toastTimer);
+    toastTimer=setTimeout(function(){toastEl.classList.remove('is-on')},2000);
+  }
+
+  /* 移动端导航折叠 */
+  var burger=document.getElementById('hlBurger');
+  var nav=document.getElementById('hlNav');
+  burger.addEventListener('click',function(){
+    var open=nav.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded',open?'true':'false');
+    burger.textContent=open?'×':'☰';
+  });
+  nav.addEventListener('click',function(e){
+    if(e.target.tagName==='A'){
+      nav.classList.remove('is-open');
+      burger.setAttribute('aria-expanded','false');
+      burger.textContent='☰';
+    }
+  });
+
+  /* 搜索前端反馈 */
+  var searchInput=document.getElementById('hlSearchInput');
+  var searchFeedback=document.getElementById('hlSearchFeedback');
+  var searchTimer=null;
+  if(searchInput){
+    searchInput.addEventListener('input',function(){
+      var v=this.value.trim();
+      clearTimeout(searchTimer);
+      if(!v){searchFeedback.classList.remove('is-on');searchFeedback.textContent='';return;}
+      searchTimer=setTimeout(function(){
+        var cards=document.querySelectorAll('#hlVideoGrid .hl-video-card');
+        var hit=0;
+        cards.forEach(function(c){
+          var text=c.textContent||'';
+          var match=text.indexOf(v)>-1;
+          if(match)hit++;
+        });
+        searchFeedback.textContent='在热门影像中找到 '+hit+' 部与“'+v+'”相关的作品';
+        searchFeedback.classList.add('is-on');
+      },260);
+    });
+    searchInput.addEventListener('keydown',function(e){
+      if(e.key==='Enter'&&this.value.trim()){
+        document.getElementById('hl-videos').scrollIntoView({behavior:'smooth'});
+      }
+    });
+  }
+
+  /* 收藏与分享 */
+  document.querySelectorAll('.hl-like').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var span=btn.querySelector('span');
+      var n=parseInt(span.textContent.replace(/,/g,''),10)||0;
+      var liked=btn.classList.toggle('is-liked');
+      span.textContent=liked?(n+1).toLocaleString():Math.max(0,n-1).toLocaleString();
+      toast(liked?'已加入收藏':'已取消收藏');
+    });
+  });
+
+  var shareModal=document.getElementById('hlShareModal');
+  var currentShareTitle='黑料大赛作品';
+  function openModal(m){m.classList.add('is-open');}
+  function closeModal(m){m.classList.remove('is-open');}
+
+  document.querySelectorAll('.hl-share').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var card=btn.closest('.hl-video-card');
+      var h=card?card.querySelector('h3'):null;
+      currentShareTitle=h?h.textContent:'黑料大赛作品';
+      openModal(shareModal);
+    });
+  });
+
+  document.querySelectorAll('[data-hl-close]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      closeModal(btn.closest('.hl-modal'));
+    });
+  });
+  document.querySelectorAll('.hl-modal').forEach(function(m){
+    m.addEventListener('click',function(e){
+      if(e.target===m)closeModal(m);
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){
+      document.querySelectorAll('.hl-modal.is-open').forEach(closeModal);
+    }
+  });
+
+  document.querySelectorAll('[data-hl-share-tip]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      toast('已生成'+btn.getAttribute('data-hl-share-tip')+'分享卡片：'+currentShareTitle);
+    });
+  });
+
+  var copyBtn=document.querySelector('[data-hl-copy]');
+  if(copyBtn){
+    copyBtn.addEventListener('click',function(){
+      var link='https://www.heiliao-film.example/video/'+encodeURIComponent(currentShareTitle.replace(/\s+/g,'-'));
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(function(){
+          toast('作品链接已复制');
+        }).catch(function(){
+          toast('复制失败，请手动复制');
+        });
+      }else{
+        toast('作品链接已生成，可长按复制');
+      }
+    });
+  }
+
+  /* 创作者信息弹窗 */
+  var creatorModal=document.getElementById('hlCreatorModal');
+  var creatorName=document.getElementById('hlCreatorName');
+  var creatorDesc=document.getElementById('hlCreatorDesc');
+  document.querySelectorAll('.hl-creator').forEach(function(card){
+    card.style.cursor='pointer';
+    card.addEventListener('click',function(){
+      var name=card.querySelector('h3').textContent;
+      var field=card.querySelector('.hl-field').textContent;
+      var desc=card.querySelector('p').textContent;
+      creatorName.textContent=name+' · '+field;
+      creatorDesc.textContent=desc+' 该创作者已通过黑料大赛官方网站实名认证，作品均为原创首发。';
+      openModal(creatorModal);
+    });
+  });
+
+  /* 联系表单 */
+  var contactForm=document.getElementById('hlContactForm');
+  if(contactForm){
+    contactForm.addEventListener('submit',function(e){
+      e.preventDefault();
+      var name=contactForm.querySelector('input[name="name"]').value.trim();
+      toast(name?('留言已提交，'+name+'，我们会在三个工作日内回复'):'留言已提交');
+      contactForm.reset();
+    });
+  }
+
+  /* 回到顶部 */
+  var toTop=document.getElementById('hlToTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>520){toTop.classList.add('is-on');}
+    else{toTop.classList.remove('is-on');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  /* 导航高亮 */
+  var anchors=document.querySelectorAll('.hl-nav a');
+  var sections=[];
+  anchors.forEach(function(a){
+    var id=a.getAttribute('href');
+    if(id&&id.charAt(0)==='#'){
+      var sec=document.getElementById(id.slice(1));
+      if(sec)sections.push({link:a,el:sec});
+    }
+  });
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          anchors.forEach(function(a){a.classList.remove('is-active');});
+          sections.forEach(function(s){
+            if(s.el===en.target)s.link.classList.add('is-active');
+          });
+        }
+      });
+    },{rootMargin:'-40% 0px -50% 0px'});
+    sections.forEach(function(s){io.observe(s.el);});
+  }
+})();
+</script>
+</body>
+            </html>
